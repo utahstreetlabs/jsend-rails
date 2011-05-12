@@ -9,6 +9,14 @@ module JSend
           ActiveSupport::JSON.decode(body)
         end
 
+        def jsend_code
+          json['code']
+        end
+
+        def jsend_message
+          json['message']
+        end
+
         def jsend_status
           json['status']
         end
