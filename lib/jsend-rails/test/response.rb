@@ -6,23 +6,23 @@ module JSend
     module Test
       module Response
         def json
-          ActiveSupport::JSON.decode(body)
+          HashWithIndifferentAccess.new(ActiveSupport::JSON.decode(body))
         end
 
         def jsend_code
-          json['code']
+          json[:code]
         end
 
         def jsend_message
-          json['message']
+          json[:message]
         end
 
         def jsend_status
-          json['status']
+          json[:status]
         end
 
         def jsend_data
-          json['data']
+          json[:data]
         end
       end
     end
@@ -30,3 +30,4 @@ module JSend
 end
 
 ActionController::TestResponse.send :include, JSend::Rails::Test::Response
+ActionDispatch::TestResponse.send :include, JSend::Rails::Test::Response
