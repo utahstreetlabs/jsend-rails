@@ -2,8 +2,8 @@ require 'rails'
 
 module JSend
   module Rails
-    class Railtie < ::Rails::Railtie
-      initializer "jsend.configure_rails_initialization" do
+    class Engine < ::Rails::Engine
+      initializer "extend Controller with jsend-rails" do |app|
         ActionController::Base.send :include, JSend::Rails::Controller
       end
     end
