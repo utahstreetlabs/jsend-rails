@@ -1,2 +1,2 @@
-source :rubyforge
+source 'https://rubygems.org'
 gemspec
