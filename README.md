@@ -14,7 +14,7 @@ In a controller:
         render_jsend(:fail => thing.errors)
       end
     rescue Exception => e
-      render_jsend(:error => e.message, :code => 12345, :data => ['other', 'stuff])
+      render_jsend(:error => e.message, :code => 12345, :data => ['other', 'stuff'])
     end
 
 Valid statuses are `:success`, `:fail` and `:error`. You can pass either the status itself (which implies an empty data
